@@ -10,6 +10,13 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+            rel="stylesheet"
+          />
+
           <title>Thanks Jos!</title>
         </Head>
         <body>
