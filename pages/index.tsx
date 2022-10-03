@@ -43,6 +43,6 @@ const StCardsContainer = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  background-color: #fefed1;
+  background-color: #fffffa;
   min-height: 100vh;
 `;

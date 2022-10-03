@@ -28,11 +28,11 @@ export function Card({ data }: CardProps) {
 const StContainer = styled.div`
   position: relative;
   box-shadow: 1px 8px 9px -1px #494945a4;
-  background-color: #ffffea;
+  background-color: #ffffff;
   display: inline-block;
   padding: 24px;
   width: 400px;
-  margin: 24px 48px;
+  margin: 48px;
 `;
 
 const StImageContainer = styled.div`
@@ -57,10 +57,23 @@ const StName = styled.span`
 
 const StSticker = styled.div`
   position: absolute;
-  background-color: #ffffea;
-  left: 0;
+  background-color: #f3f38a;
   display: flex;
   justify-content: center;
-  left: 48px;
-  top: 400px;
+  left: -48px;
+  top: 0px;
+  padding: 4px 20px;
+  clip-path: polygon(
+    4% 0,
+    100% 0,
+    100% 17%,
+    95% 52%,
+    100% 78%,
+    100% 100%,
+    7% 100%,
+    7% 76%,
+    1% 49%,
+    5% 19%
+  );
+  transform: rotate(-20deg);
 `;
