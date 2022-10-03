@@ -4,16 +4,22 @@ import Airtable from "airtable";
 
 type Data = {};
 
-
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
   process.env.AIRTABLE_BASE_ID as string
 );
+
+export interface AirtableData {
+  name: string;
+  headline: string;
+  story: string;
+  image: string;
+}
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const airtableData: any[] = [];
+  const airtableData: AirtableData[] = [];
 
   base("Content")
     .select({
@@ -27,9 +33,9 @@ export default function handler(
           const image = record.get("Image")[0].url;
 
           airtableData.push({
-            name: record.get("Name"),
-            headline: record.get("Headline"),
-            story: record.get("Story"),
+            name: record.get("Name") as string,
+            headline: record.get("Headline") as string,
+            story: record.get("Story") as string,
             image: image,
           });
         });
