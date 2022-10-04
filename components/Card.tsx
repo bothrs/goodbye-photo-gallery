@@ -14,7 +14,7 @@ export function Card({ data }: CardProps) {
           src={data.image}
           alt={`Picture fron ${data.name}`}
           layout="fill"
-          objectFit="fill"
+          objectFit="cover"
         />
       </StImageContainer>
       <StSticker>
@@ -60,7 +60,7 @@ const StSticker = styled.div`
   background-color: #f3f38a;
   display: flex;
   justify-content: center;
-  left: -48px;
+  left: -64px;
   top: 0px;
   padding: 4px 20px;
   clip-path: polygon(
