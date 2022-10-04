@@ -7,8 +7,12 @@ interface CardProps {
 }
 
 export function Card({ data }: CardProps) {
+  const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
+
   return (
-    <StContainer>
+    <StContainer
+      backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
+    >
       <StImageContainer>
         <Image
           src={data.image}
@@ -17,25 +21,30 @@ export function Card({ data }: CardProps) {
           objectFit="cover"
         />
       </StImageContainer>
-      {/* <StSticker> */}
       <StName>{`${data.name} - ${data.headline}`}</StName>
-      {/* </StSticker> */}
       <StContent>{data.story}</StContent>
     </StContainer>
   );
 }
 
-const StContainer = styled.div`
+const StContainer = styled.div<{ backgroundColor: string }>`
   position: relative;
-  box-shadow: 1px 8px 9px -1px #494945a4;
-  background-color: #ffffff;
+  box-shadow: 1px 8px 9px -1px #60605c40;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   display: inline-block;
   padding: 24px;
   width: 400px;
-  min-width: 300px;
   margin: 24px;
   border-radius: 16px;
-  align-self:flex-start
+
+  justify-self: center;
+
+  transition-duration: 0.15s;
+
+  &:hover {
+    background-color: white;
+    transform: rotate(1deg) scale(1.02);
+  }
 `;
 
 const StImageContainer = styled.div`
@@ -55,7 +64,7 @@ const StContent = styled.p`
 const StName = styled.p`
   font-family: "Caveat", cursive;
   font-size: 32px;
-  margin-top: 24px
+  margin-top: 24px;
 `;
 
 const StSticker = styled.div`
