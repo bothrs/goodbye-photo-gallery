@@ -17,9 +17,9 @@ export function Card({ data }: CardProps) {
           objectFit="cover"
         />
       </StImageContainer>
-      <StSticker>
-        <StName>{`${data.name} - ${data.headline}`}</StName>
-      </StSticker>
+      {/* <StSticker> */}
+      <StName>{`${data.name} - ${data.headline}`}</StName>
+      {/* </StSticker> */}
       <StContent>{data.story}</StContent>
     </StContainer>
   );
@@ -31,30 +31,31 @@ const StContainer = styled.div`
   background-color: #ffffff;
   display: inline-block;
   padding: 24px;
-  padding-top: 4px;
   width: 400px;
   min-width: 300px;
-  margin: 48px;
+  margin: 24px;
+  border-radius: 16px;
+  align-self:flex-start
 `;
 
 const StImageContainer = styled.div`
   position: relative;
-  margin-top: 32px;
   width: 100%;
   height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
 `;
 
 const StContent = styled.p`
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 14px;
-  line-height: 16px;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
   margin-top: 24px;
 `;
 
-const StName = styled.span`
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 20px;
-  padding: 2px 8px;
+const StName = styled.p`
+  font-family: "Caveat", cursive;
+  font-size: 32px;
+  margin-top: 24px
 `;
 
 const StSticker = styled.div`
