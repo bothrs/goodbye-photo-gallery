@@ -31,7 +31,9 @@ const StContainer = styled.div`
   background-color: #ffffff;
   display: inline-block;
   padding: 24px;
+  padding-top: 4px;
   width: 400px;
+  min-width: 300px;
   margin: 48px;
 `;
 
