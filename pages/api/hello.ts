@@ -10,8 +10,8 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 
 export interface AirtableData {
   name: string;
-  headline: string;
   story: string;
+  headline?: string;
   image: string;
 }
 

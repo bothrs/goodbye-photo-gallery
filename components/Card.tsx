@@ -21,7 +21,7 @@ export function Card({ data }: CardProps) {
           objectFit="cover"
         />
       </StImageContainer>
-      <StName>{`${data.name} - ${data.headline}`}</StName>
+      <StName>{`${data.name} - ${data?.headline}`}</StName>
       <StContent>{data.story}</StContent>
     </StContainer>
   );
