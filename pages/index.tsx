@@ -39,10 +39,10 @@ const Home: NextPage = () => {
 export default Home;
 
 const StCardsContainer = styled.div`
-  width: 100%;
   background-color: #ffffff;
   min-height: 100vh;
   column-count: 5;
+  margin: 24px;
 
   @media (max-width: 2300px) {
     column-count: 4;

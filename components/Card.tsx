@@ -35,7 +35,7 @@ const StContainer = styled.div<{ backgroundColor: string }>`
   display: inline-block;
   padding: 24px;
   width: 400px;
-  margin: 24px;
+  margin-bottom: 24px;
   border-radius: 16px;
 
   justify-self: center;
