@@ -9,8 +9,6 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
-  console.log(data.image);
-
   return (
     <StContainer
       backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
