@@ -9,7 +9,6 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
-
   return (
     <StContainer
       backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
@@ -22,7 +21,9 @@ export function Card({ data }: CardProps) {
           objectFit="cover"
         />
       </StImageContainer>
-      <StName>{`${data.name} ${data.headline? '- '+data.headline : ''}`}</StName>
+      <StName>{`${data.name} ${
+        data.headline ? "- " + data.headline : ""
+      }`}</StName>
       <StContent>{data.story}</StContent>
     </StContainer>
   );
@@ -44,7 +45,10 @@ const StContainer = styled.div<{ backgroundColor: string }>`
 
   &:hover {
     background-color: white;
-    transform: rotate(1deg) scale(1.02);
+    transform: ${() =>
+      ` rotate(${
+        Math.random() * 2 * (Math.random() > 0.5 ? -1 : 1)
+      }deg) scale(1.02);`};
   }
 `;
 
