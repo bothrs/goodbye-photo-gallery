@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       const res = await fetch("/api/hello");
       const data = await res.json();
 
-      setData(data);
+      setData(data)
     };
 
     getData();

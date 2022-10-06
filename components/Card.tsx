@@ -9,7 +9,6 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
-  console.log(data.headline, typeof data.headline, !!data.headline)
 
   return (
     <StContainer
@@ -67,27 +66,4 @@ const StName = styled.p`
   font-family: "Caveat", cursive;
   font-size: 32px;
   margin-top: 24px;
-`;
-
-const StSticker = styled.div`
-  position: absolute;
-  background-color: #f3f38a;
-  display: flex;
-  justify-content: center;
-  left: -64px;
-  top: 0px;
-  padding: 4px 20px;
-  clip-path: polygon(
-    4% 0,
-    100% 0,
-    100% 17%,
-    95% 52%,
-    100% 78%,
-    100% 100%,
-    7% 100%,
-    7% 76%,
-    1% 49%,
-    5% 19%
-  );
-  transform: rotate(-20deg);
 `;
