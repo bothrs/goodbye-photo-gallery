@@ -44,16 +44,16 @@ const StCardsContainer = styled.div`
   min-height: 100vh;
   column-count: 5;
 
-  @media (max-width: 2100px) {
+  @media (max-width: 2300px) {
     column-count: 4;
   }
-  @media (max-width: 1700px) {
+  @media (max-width: 1850px) {
     column-count: 3;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     column-count: 2;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     column-count: 1;
   }
 `;
