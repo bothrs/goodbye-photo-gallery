@@ -31,7 +31,7 @@ export default function handler(
         records.forEach(function (record) {
           //@ts-ignore
           const image = record.get("Image")[0].url;
-
+          
           airtableData.push({
             name: record.get("Name") as string,
             headline: record.get("Headline") as string,

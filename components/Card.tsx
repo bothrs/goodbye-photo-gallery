@@ -9,17 +9,27 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
+  console.log(data.image);
+
   return (
     <StContainer
       backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
     >
       <StImageContainer>
-        <Image
-          src={data.image}
-          alt={`Picture fron ${data.name}`}
-          layout="fill"
-          objectFit="cover"
-        />
+        {data.image.includes(".mp4") ? (
+           <video
+           src={data.image}
+           controls={true}
+           loop={true}
+           autoPlay={true}
+           muted={true}
+         />
+        ) :  <Image
+        src={data.image}
+        alt={`Picture fron ${data.name}`}
+        layout="fill"
+        objectFit="cover"
+      />}
       </StImageContainer>
       <StName>{`${data.name} ${
         data.headline ? "- " + data.headline : ""
