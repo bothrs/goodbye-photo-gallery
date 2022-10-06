@@ -9,6 +9,8 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
+  console.log(data.headline, typeof data.headline, !!data.headline)
+
   return (
     <StContainer
       backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
@@ -21,7 +23,7 @@ export function Card({ data }: CardProps) {
           objectFit="cover"
         />
       </StImageContainer>
-      <StName>{`${data.name} - ${data?.headline}`}</StName>
+      <StName>{`${data.name} ${data.headline? '- '+data.headline : ''}`}</StName>
       <StContent>{data.story}</StContent>
     </StContainer>
   );
