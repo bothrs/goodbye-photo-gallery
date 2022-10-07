@@ -14,7 +14,7 @@ export function Card({ data }: CardProps) {
       backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
     >
       <StImageContainer>
-        {data.image.includes(".mp4") ? (
+        {data.image.includes(".mp4") || data.image.includes(".MOV") ? (
           <StVideo
             src={data.image}
             controls={false}
