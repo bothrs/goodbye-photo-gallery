@@ -15,19 +15,21 @@ export function Card({ data }: CardProps) {
     >
       <StImageContainer>
         {data.image.includes(".mp4") ? (
-           <video
-           src={data.image}
-           controls={true}
-           loop={true}
-           autoPlay={true}
-           muted={true}
-         />
-        ) :  <Image
-        src={data.image}
-        alt={`Picture fron ${data.name}`}
-        layout="fill"
-        objectFit="cover"
-      />}
+          <StVideo
+            src={data.image}
+            controls={false}
+            loop={true}
+            autoPlay={true}
+            muted={true}
+          />
+        ) : (
+          <Image
+            src={data.image}
+            alt={`Picture fron ${data.name}`}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </StImageContainer>
       <StName>{`${data.name} ${
         data.headline ? "- " + data.headline : ""
@@ -78,4 +80,10 @@ const StName = styled.p`
   font-family: "Caveat", cursive;
   font-size: 32px;
   margin-top: 24px;
+`;
+
+const StVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
