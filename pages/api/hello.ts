@@ -30,8 +30,8 @@ export default function handler(
       function page(records) {
         records.forEach(function (record) {
           //@ts-ignore
-          const image = record.get("Image")[0].url;
-          
+          const image = record.get("Image")[0]?.thumbnails?.large?.url || record.get("Image")[0]?.url;
+
           airtableData.push({
             name: record.get("Name") as string,
             headline: record.get("Headline") as string,
