@@ -54,6 +54,8 @@ const StCardsContainer = styled.div`
     column-count: 2;
   }
   @media (max-width: 950px) {
-    column-count: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
   }
 `;
