@@ -21,6 +21,7 @@ export function Card({ data }: CardProps) {
             loop={true}
             autoPlay={true}
             muted={true}
+            playsInline={true}
           />
         ) : (
           <Image
@@ -45,7 +46,7 @@ const StContainer = styled.div<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   display: inline-block;
   padding: 24px;
-  width: 400px;
+  max-width: 400px;
   margin-bottom: 24px;
   border-radius: 16px;
 
