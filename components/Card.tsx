@@ -11,7 +11,7 @@ export function Card({ data }: CardProps) {
 
   return (
     <StContainer
-      backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
+      $backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
     >
       <StImageContainer>
         {data.image.includes(".mp4") || data.image.includes(".MOV") ? (
@@ -40,10 +40,10 @@ export function Card({ data }: CardProps) {
   );
 }
 
-const StContainer = styled.div<{ backgroundColor: string }>`
+const StContainer = styled.div<{ $backgroundColor: string }>`
   position: relative;
   box-shadow: 1px 8px 9px -1px #60605c40;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
   display: inline-block;
   padding: 24px;
   max-width: 400px;
