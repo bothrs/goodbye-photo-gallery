@@ -39,23 +39,14 @@ const Home: NextPage = () => {
 export default Home;
 
 const StCardsContainer = styled.div`
-  background-color: #ffffff;
   min-height: 100vh;
-  column-count: 5;
-  margin: 24px;
 
-  @media (max-width: 2300px) {
-    column-count: 4;
-  }
-  @media (max-width: 1850px) {
-    column-count: 3;
-  }
-  @media (max-width: 1400px) {
-    column-count: 2;
-  }
-  @media (max-width: 950px) {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-  }
+  margin: 24px;  
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
 `;

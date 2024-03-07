@@ -7,7 +7,7 @@ interface CardProps {
 }
 
 export function Card({ data }: CardProps) {
-  const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
+  const colors = ["#9f859e", "#de858a", "#e8a68a", "#ecd377", "#9ed3b2", "#92c0d8", "#e4acc1"];
 
   return (
     <StContainer
@@ -42,33 +42,37 @@ export function Card({ data }: CardProps) {
 
 const StContainer = styled.div<{ $backgroundColor: string }>`
   position: relative;
-  box-shadow: 1px 8px 9px -1px #60605c40;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: ${({ $backgroundColor }) => $backgroundColor};
   display: inline-block;
-  padding: 24px;
-  max-width: 400px;
-  margin-bottom: 24px;
-  border-radius: 16px;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
 
   justify-self: center;
 
   transition-duration: 0.15s;
 
-  &:hover {
-    background-color: white;
+  border: 1px solid #ffffff77;
+
+
+  @media (min-width: 800px) {
     transform: ${() =>
       ` rotate(${
-        Math.random() * 2 * (Math.random() > 0.5 ? -1 : 1)
-      }deg) scale(1.02);`};
+        Math.random() * 4 * (Math.random() > 0.5 ? -1 : 1)
+      }deg);`};
   }
 `;
 
 const StImageContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 400px;
-  border-radius: 12px;
+  width: 360px;
+  height: 360px;
+
+  border-radius: 8px;
   overflow: hidden;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const StContent = styled.p`

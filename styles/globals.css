@@ -3,6 +3,13 @@
    License: none (public domain)
 */
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html,
 body,
 div,
@@ -107,6 +114,16 @@ section {
 }
 body {
   line-height: 1;
+  background-image: url("/noise.png");
+  background-color: rgb(255, 252, 230);
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-clip: border-box;
+  background-size: auto;
+  overscroll-behavior-y: none;
+  
 }
 ol,
 ul {
