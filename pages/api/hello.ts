@@ -21,7 +21,7 @@ export default function handler(
 ) {
   const airtableData: AirtableData[] = [];
 
-  base("Content")
+  base("Entries")
     .select({
       maxRecords: 100,
       view: "Grid view",
@@ -29,15 +29,21 @@ export default function handler(
     .eachPage(
       function page(records) {
         records.forEach(function (record) {
-          //@ts-ignore
-          const image = record.get("Image")[0]?.thumbnails?.large?.url || record.get("Image")[0]?.url;
 
-          airtableData.push({
-            name: record.get("Name") as string,
-            headline: record.get("Headline") as string,
-            story: record.get("Story") as string,
-            image: image,
-          });
+          const attachments = record.get("Image")
+
+          if (Array.isArray(attachments)) {
+            const image = attachments[0]?.thumbnails?.large?.url || attachments[0]?.url;
+
+            const recordData = {
+              name: record.get("Name") as string,
+              headline: record.get("Headline") as string,
+              story: record.get("Story") as string,
+              image: image,
+            }
+
+            airtableData.push(recordData)
+          }
         });
 
         res.status(200).json(airtableData);
