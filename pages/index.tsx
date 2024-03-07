@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Thank you Jos!</title>
+        <title>Thank you {process.env.NEXT_PUBLIC_FIRST_NAME}!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

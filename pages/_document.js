@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           ></link>
 
-          <title>Thanks Jos!</title>
+          <title>{process.env.NEXT_PUBLIC_FIRST_NAME}</title>
         </Head>
         <body>
           <Main />
