@@ -48,5 +48,5 @@ const StCardsContainer = styled.div`
   align-items: stretch;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 40px;
+  gap: 80px;
 `;
