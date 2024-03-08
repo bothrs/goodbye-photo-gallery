@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import Airtable from "airtable";
+import { shuffleArray } from "../../utils/array";
 
 type Data = {};
 
@@ -46,7 +47,9 @@ export default function handler(
           }
         });
 
-        res.status(200).json(airtableData);
+        const shuffledData = shuffleArray(airtableData)
+
+        res.status(200).json(shuffledData);
       },
       function done(err) {
         if (err) {

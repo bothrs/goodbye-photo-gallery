@@ -1,17 +1,19 @@
 import Image from "next/image";
 import styled from "styled-components";
 import { AirtableData } from "../pages/api/hello";
+import { shuffleArray } from "../utils/array";
 
 interface CardProps {
   data: AirtableData;
+  index: number;
 }
 
-export function Card({ data }: CardProps) {
-  const colors = ["#9f859e", "#de858a", "#e8a68a", "#ecd377", "#9ed3b2", "#92c0d8", "#e4acc1"];
+const colors = shuffleArray(["#9f859e", "#de858a", "#e8a68a", "#ecd377", "#9ed3b2", "#92c0d8", "#e4acc1"]);
 
+export function Card({ data, index }: CardProps) {
   return (
     <StContainer
-      $backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
+      $backgroundColor={colors[index % colors.length]}
     >
       <StImageContainer>
         {data.image.includes(".mp4") || data.image.includes(".MOV") ? (

@@ -28,8 +28,8 @@ const Home: NextPage = () => {
       </Head>
 
       <StCardsContainer>
-        {data?.map((item) => {
-          return <Card key={item.headline} data={item} />;
+        {data?.map((item, index) => {
+          return <Card key={item.headline} data={item} index={index}/>;
         })}
       </StCardsContainer>
     </div>
